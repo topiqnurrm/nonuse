@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>modul 7</title>
+</head>
+
+<body>
+    <h1>Validasi input HTML5</h1>
+    <form action="latihaneros1.php" method="post">
+        <table>
+            <tr>
+                <td>Nama lengkap</td>
+                <td><input type="text" name="nama_lengkap" placeholder="Masukkan Nama Lengkap anda"size="25" required pattern="[A-Za-z\s]+" title="Hanya huruf dan spasi yang diperbolehkan"/></td>
+            </tr>
+
+            <tr>
+                <td>Usia</td>
+                <td><input type="number" style="width: 50px" name="Usia" required> (Usia Min 17-30)</td>
+            </tr>
+
+            <tr>
+                <td>Email</td>
+                <td><input type="email" name="email" size="25" placeholder="nama_email@host.com" required /></td>
+            </tr>
+
+            <tr>
+                <td>Web</td>
+                <td><input type="url" name="url" size="30" placeholder="http://" required/></td>
+            </tr>
+
+            <tr>
+                <td>Password</td>
+                <td><input type="password" name="password" size="20" placeholder="Semua karakter, min 8" minlength="8" required><b> (bonus)</b></b></td>
+            </tr>
+
+            <tr>
+                <td style="padding: 10px;"></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td><input type="submit" value="Buatlah akun saya" name="simpan"/></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

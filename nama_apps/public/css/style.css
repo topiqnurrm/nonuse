@@ -1,0 +1,15 @@
+.card-footer {
+    background-color: transparent!important
+}
+.bg-primary{
+    color: white;
+}
+.bg-success {
+    color: white;
+}
+.bg-secondary {
+    color: white;
+}
+.pointer{
+    cursor: pointer;
+}

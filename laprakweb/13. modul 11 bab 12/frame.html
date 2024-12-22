@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>Contoh JavaScript</title>
+	<script>
+        //untuk inform(di pakai di About me line:22)
+        function inform() {
+        alert("Halo, nama saya " + nama + " dan umur saya " + umur + " tahun.");
+        }
+
+		// deklarasi variabel
+		var nama = "Taufiq Nurrohman";
+		var umur = 18;
+
+		// menampilkan pesan dengan menggunakan variabel
+		alert("Halo, nama saya " + nama + " dan umur saya " + umur + " tahun.");
+
+		// membuat fungsi untuk memunculkan pesan
+		function pesan() {
+			document.getElementById("hasil").innerHTML = "Berikut beberapa materi yang dipelajari : <br>1. Pengenalan JavaScript: variabel, tipe data, dan operator.<br>2. Menampilkan pesan menggunakan JavaScript, membuat fungsi, dan event handler.<br>3. Mengubah tampilan halaman HTML menggunakan JavaScript, seperti warna background, menampilkan teks, dan menambahkan frame.<br>4. Membuat file HTML, CSS, dan JavaScript terpisah.<br>5. Menambahkan komentar pada HTML, CSS, dan JavaScript.";
+		}
+	</script>
+    <form>  <!--untuk buttoh about me (inform) line:5-->
+        <input type="button" name="test" value="About Me" onclick="inform()">
+    </form>
+</head>
+<body>
+    <!--membuat inputan check email-->
+    <form name ="test" onSubmit="checkemail(this.test2.value); return false">
+    <input type="text" size="20" name="test2"> <input type="submit" value="Submit">
+    </form>
+    <script type="text/javascript">
+        function checkemail(email){
+            if (email.indexOf("@")!=-1 && email.indexOf(".")!=-1)
+            alert("Apakah Alamat Email Sudah Benar?")
+            else
+            alert("Pneulisan Email Salah!")
+        }
+    </script>
+
+    <!--memilih warna di layer kiri-->
+    <h4>Pilihlah warna layar anda :</h4>
+    <form name = "go">
+    <input type="radio" name="C1" onclick="document.bgColor='lightblue'">
+    <input type="radio" name="C1" onclick="document.bgColor='lightyellow'">
+    <input type="radio" name="C1" onclick="document.bgColor='lightgreen'">
+    </form>
+
+    <!--paragraf utama lanjutan line:18-->
+    <h1>Contoh Penggunaan JavaScript</h1>
+	<p>Buatlah 1 file yang memanfaatkan javascript. Bertemakan bebas. Sekreatif mungkin.</p>
+	<button onclick="pesan()">click me!</button>
+	<p id="hasil"></p>
+</body>
+</html>

@@ -1,0 +1,50 @@
+body {
+    font-family: 'Open Sans', sans-serif; background: #8ee7aa;
+}
+
+h1 {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.judul_login {
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.rectangle {
+    text-align: left;
+    width: 350px;
+    background: #4edaf9;
+    margin: 80px auto;
+    padding: 30px 20px;
+}
+
+label {
+    font-size: 12pt;
+    color: #090800;
+}
+
+.form_login {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 20px;
+    font-size: 11pt;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.login_submit {
+    background: #f49320;
+    color: #fff;
+    font-size: 11pt;
+    width: 100%;
+    border: none;
+    border-radius: 3px;
+    padding: 10px 20px;
+    cursor: pointer;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
+}

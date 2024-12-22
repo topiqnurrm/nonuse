@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Kalkulator Sederhana</title>
+    <link rel="stylesheet" href="gaya.css">
+  </head>
+  <body>
+    <script>
+        var y=window.prompt("hallo selamat datang, bolehkah berkenalan dengan anda ?. Tuliskan nama anda !")
+        window.alert("wellcome, "+y)
+
+        function bukawindow(){
+            window.open("http://www.google.com","google","width=400, height olbar=1");
+        }
+    </script>
+    <input type="button" onclick="bukawindow()" value="open browser ?">
+
+
+    <div class="calculator">
+      <div class="display">
+        <input type="text" id="display" disabled>
+      </div>
+      <div class="buttons">
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="appendValue('/')">/</button>
+        <button onclick="appendValue('*')">*</button>
+        <button onclick="appendValue('-')">-</button>
+        <button onclick="appendValue('7')">7</button>
+        <button onclick="appendValue('8')">8</button>
+        <button onclick="appendValue('9')">9</button>
+        <button onclick="appendValue('+')">+</button>
+        <button onclick="appendValue('4')">4</button>
+        <button onclick="appendValue('5')">5</button>
+        <button onclick="appendValue('6')">6</button>
+        <button onclick="calculate()">=</button>
+        <button onclick="appendValue('1')">1</button>
+        <button onclick="appendValue('2')">2</button>
+        <button onclick="appendValue('3')">3</button>
+        <button onclick="appendValue('0')">0</button>
+      </div>
+    </div>
+    <script src="skrip.js"></script>
+
+
+    <button onclick="exit()">Exit</button>
+
+    <script>
+    function exit() {
+        var x = window.confirm("Are You Sure?");
+        if (x) {
+            window.alert("Terima kasih!");
+            window.close();
+        } else {
+            window.alert("Silakan lanjutkan pekerjaan Anda.");
+        }
+    }
+    </script>
+  </body>
+</html>
