@@ -158,7 +158,3 @@ The dashboard features:
 - Detailed vehicle cards showing fuel, speed, and location data
 - Responsive design that works on all device sizes
 - Intuitive navigation between list and detail views
-
----
-
-*Built with ❤️ for efficient fleet management*
