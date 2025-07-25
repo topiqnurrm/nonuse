@@ -79,7 +79,7 @@ Ensure you have [Docker](https://docs.docker.com/get-docker/) installed and runn
 
 ### Access Points
 - **Dashboard**: [http://localhost:3000](http://localhost:3000)
-- **API Documentation**: [http://localhost:8080/docs](http://localhost:8080/docs) / https://grateful-contentent-production-c40f.up.railway.app
+- **API Documentation**: [http://localhost:8080/docs](http://localhost:8080/docs) / https://grateful-contentment-production-c40f.up.railway.app
 
 ## 🔐 Login Credentials
 
