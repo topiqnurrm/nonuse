@@ -3,27 +3,27 @@ FROM oven/bun:1-alpine
 
 WORKDIR /app
 
-# Salin package.json dan bun.lockb terlebih dahulu untuk memanfaatkan Docker's caching
+# Salin package.json dan bun.lockb terlebih dahulu
 COPY package.json bun.lockb ./
 
 # Install dependencies
 RUN bun install --frozen-lockfile
 
-# Salin sisa kode aplikasi Anda (sumber, skema prisma, tsconfig dll.)
+# Salin *semua* kode aplikasi, termasuk folder 'prisma'
+# (Ini penting agar Prisma dapat menemukan schema.prisma)
 COPY . .
 
 # Set lingkungan ke produksi
 ENV NODE_ENV=production
 
-# Generate Prisma Client (ini penting dan sudah benar Anda tambahkan)
-RUN bun run prisma:generate
+# Jalankan prisma generate SECARA EKSPLISIT di sini.
+# Ini memastikan klien Prisma digenerate sebelum langkah 'bun run build'.
+RUN bun run prisma:generate 
 
 # Bangun aplikasi TypeScript Anda
-# Ini akan menjalankan script "build" di package.json Anda
 RUN bun run build
 
-# Perintah untuk menjalankan aplikasi Anda yang sudah terkompilasi
-# Ini akan menjalankan script "start" di package.json Anda
+# Perintah untuk memulai aplikasi Anda yang sudah terkompilasi
 CMD ["bun", "run", "start"]
 
 EXPOSE 8080

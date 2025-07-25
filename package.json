@@ -1,5 +1,5 @@
 {
-  "name": "knowledgetest_taufiqnurrohman",
+  "name": "knowledgetest_taufiqurrohman",
   "version": "1.0.0",
   "description": "KnowledgeTest_TaufiqNurrohman",
   "repository": "topiqnurrm/KnowledgeTest_TaufiqNurrohman",
@@ -9,7 +9,6 @@
   "scripts": {
     "dev": "bun --filter '*' dev",
     "build": "bun --filter '*' build",
-    "start": "bun run src/index.ts",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format .",
