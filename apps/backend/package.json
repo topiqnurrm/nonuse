@@ -1,5 +1,5 @@
 {
-  "name": "KnowledgeTest-backend",
+  "name": "knowledgetest-backend",
   "description": "Backend service of vehicle tracker dashboard app.",
   "version": "1.0.0",
   "repository": "topiqnurrm/KnowledgeTest_TaufiqNurrohman",
@@ -9,7 +9,7 @@
     "build": "bun build src/index.ts --target bun --outdir ./dist",
     "build:docker": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts",
     
-    "start": "NODE_ENV=development bun src/index.ts",
+    "start": "bun run dist/index.js",
     "prisma:seed": "prisma db seed",
     "prisma:new": "prisma migrate dev && prisma generate",
     "prisma:pull": "prisma db pull && prisma generate",

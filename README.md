@@ -57,8 +57,7 @@ Ensure you have [Docker](https://docs.docker.com/get-docker/) installed and runn
 
 1. **Get the Code**
    ```bash
-   git clone https://github.com/samuelyuma/fullstack-vehicle-tracker-dashboard
-   cd fullstack-vehicle-tracker
+   git clone https://github.com/topiqnurrm/KnowledgeTest_TaufiqNurrohman
    ```
 
 2. **Launch the Application**
