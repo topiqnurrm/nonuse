@@ -1,0 +1,67 @@
+{
+  "name": "KnowledgeTest-backend",
+  "description": "Backend service of vehicle tracker dashboard app.",
+  "version": "1.0.0",
+  "repository": "topiqnurrm/KnowledgeTest_TaufiqNurrohman",
+  "main": "index.ts",
+  "scripts": {
+    "dev": "bun run --hot src/index.ts --watch",
+    "build": "bun build src/index.ts --target bun --outdir ./dist",
+    "build:docker": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts",
+    
+    "start": "NODE_ENV=development bun src/index.ts",
+    "prisma:seed": "prisma db seed",
+    "prisma:new": "prisma migrate dev && prisma generate",
+    "prisma:pull": "prisma db pull && prisma generate",
+    "prisma:push": "prisma generate && prisma db push",
+    "prisma:deploy": "prisma generate && prisma migrate deploy",
+    "prisma:generate": "prisma generate"
+  },
+  "dependencies": {
+    "@asteasolutions/zod-to-openapi": "^8.0.0",
+    "@neondatabase/serverless": "^1.0.1",
+    "@prisma/adapter-neon": "^6.12.0",
+    "@prisma/client": "^6.12.0",
+    "@scalar/express-api-reference": "^0.8.12",
+    "@types/cookie-parser": "^1.4.9",
+    "bcryptjs": "^3.0.2",
+    "cookie-parser": "^1.4.7",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.0",
+    "express": "^5.1.0",
+    "express-rate-limit": "^8.0.1",
+    "helmet": "^8.1.0",
+    "http-status-codes": "^2.3.0",
+    "jsonwebtoken": "^9.0.2",
+    "pino": "^9.7.0",
+    "pino-http": "^10.5.0",
+    "ws": "^8.18.3",
+    "zod": "^4.0.5"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
+    "@types/bun": "latest",
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.3",
+    "@types/jsonwebtoken": "^9.0.10",
+    "@types/ws": "^8.18.1",
+    "pino-pretty": "^13.0.0",
+    "prisma": "^6.12.0",
+    "typescript": "^5.8.3"
+  },
+  "lint-staged": {
+    "*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+      "biome check --files-ignore-unknown=true",
+      "biome check --write --no-errors-on-unmatched",
+      "biome check --write --unsafe --no-errors-on-unmatched",
+      "biome format --write --no-errors-on-unmatched",
+      "biome lint --write --no-errors-on-unmatched"
+    ],
+    "*": [
+      "biome check --no-errors-on-unmatched --files-ignore-unknown=true"
+    ]
+  },
+  "prisma": {
+    "seed": "bun ./prisma/seeder/seed.ts"
+  }
+}

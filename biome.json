@@ -1,0 +1,60 @@
+{
+  "$schema": "https://biomejs.dev/schemas/2.1.2/schema.json",
+  "vcs": {
+    "enabled": false,
+    "clientKind": "git",
+    "useIgnoreFile": false
+  },
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "package.json",
+      "apps/frontend/src/**",
+      "apps/backend/src/**",
+      "apps/frontend/package.json",
+      "apps/backend/package.json",
+      "!apps/frontend/src/components/ui/**",
+      "!apps/backend/src/generated/prisma/**"
+    ]
+  },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space"
+  },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true
+    }
+  },
+  "javascript": {
+    "formatter": {
+      "quoteStyle": "double"
+    }
+  },
+  "assist": {
+    "enabled": true,
+    "actions": {
+      "source": {
+        "organizeImports": {
+          "level": "on",
+          "options": {
+            "groups": [
+              [":URL:"],
+              ":BLANK_LINE:",
+              [":BUN:", ":NODE:"],
+              ":BLANK_LINE:",
+              [":PACKAGE_WITH_PROTOCOL:"],
+              ":BLANK_LINE:",
+              [":PACKAGE:"],
+              ":BLANK_LINE:",
+              [":ALIAS:"],
+              ":BLANK_LINE:",
+              [":PATH:"]
+            ]
+          }
+        }
+      }
+    }
+  }
+}

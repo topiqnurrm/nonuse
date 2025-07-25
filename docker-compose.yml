@@ -1,0 +1,60 @@
+services:
+  database:
+    container_name: postgres
+    image: postgres:alpine
+    restart: always
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - ${POSTGRES_PORT}:5432
+    expose:
+      - ${POSTGRES_PORT}
+    volumes:
+      - data:/var/lib/postgresql/data
+    networks:
+      - yumx-KnowledgeTest-network
+
+  backend:
+    container_name: yumx-KnowledgeTest-backend
+    build:
+      context: ./apps/backend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - ${PORT}:${PORT}
+    expose:
+      - ${PORT}
+    depends_on:
+      - database
+    volumes:
+      - ./apps/backend:/app
+      - /app/node_modules
+    networks:
+      - yumx-KnowledgeTest-network
+
+  frontend:
+    container_name: yumx-KnowledgeTest-frontend
+    build:
+      context: ./apps/frontend
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - '3000:3000'
+    expose:
+      - '3000'
+    depends_on:
+      - backend
+    networks:
+      - yumx-KnowledgeTest-network
+
+networks:
+  yumx-KnowledgeTest-network:
+    driver: bridge
+
+volumes:
+  data:
+    name: yumx-KnowledgeTest-data
