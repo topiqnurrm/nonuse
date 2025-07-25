@@ -9,6 +9,7 @@
   "scripts": {
     "dev": "bun --filter '*' dev",
     "build": "bun --filter '*' build",
+    "start": "bun run src/index.ts",
     "lint": "biome lint .",
     "lint:fix": "biome lint --write .",
     "format": "biome format .",
