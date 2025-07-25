@@ -9,7 +9,7 @@
     "build": "bun build src/index.ts --target bun --outdir ./dist",
     "build:docker": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts",
     
-    "start": "bun run dist/index.js",
+    "start": "bun run src/index.ts",
     "prisma:seed": "prisma db seed",
     "prisma:new": "prisma migrate dev && prisma generate",
     "prisma:pull": "prisma db pull && prisma generate",
