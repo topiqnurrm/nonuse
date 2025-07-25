@@ -1,4 +1,4 @@
-import { Car, Home, LogOut } from "lucide-react";
+import { Home, LogOut } from "lucide-react";
 
 import useDialogStore from "@/store/useOverlayStore";
 
@@ -33,9 +33,8 @@ export function AppSidebar({
               className="data-[slot=sidebar-menu-button]:!p-1.5"
             >
               <a href="/dashboard">
-                <Car className="!size-5" />
                 <span className="font-semibold text-base">
-                  Vehicle Tracking
+                  KnowledgeTest_VehicleTracking
                 </span>
               </a>
             </SidebarMenuButton>
