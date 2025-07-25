@@ -6,7 +6,7 @@
   "main": "index.ts",
   "scripts": {
     "dev": "bun run --hot src/index.ts --watch",
-    "build": "bun prisma generate && bun build src/index.ts --outdir dist",
+    "build": "bun build src/index.ts --outdir dist --target bun",
     "build:docker": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts",
     
     "start": "bun run dist/index.js", 
