@@ -9,10 +9,10 @@ class AuthController {
     const serviceResponse = await authService.login(req.body);
     res.cookie("token", serviceResponse.data?.token, {
       maxAge: 3600000,
-      httpOnly: true,
+      httpOnly: false,
       sameSite: "lax",
       path: "/",
-      secure: true,
+      secure: process.env.NODE_ENV === 'production',
     });
     return handleServiceResponse({ ...serviceResponse, data: undefined }, res);
   };

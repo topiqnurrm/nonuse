@@ -1,3 +1,4 @@
+// common/middleware/verify-jwt.ts
 import type { NextFunction, Request, Response } from "express";
 import { StatusCodes } from "http-status-codes";
 import jwt from "jsonwebtoken";
@@ -8,7 +9,15 @@ import { env } from "../utils/env-config";
 import { logger } from "../utils/logger";
 
 export const verifyJwt = (req: Request, res: Response, next: NextFunction) => {
-  const token = req.cookies.token;
+  // Cek di cookie dulu
+  let token = req.cookies.token;
+  
+  // Kalau tidak ada di cookie, cek di Authorization header
+  if (!token) {
+    const authHeader = req.headers['authorization'];
+    token = authHeader && authHeader.split(' ')[1]; // Bearer TOKEN
+  }
+
   if (!token) {
     return res.status(StatusCodes.UNAUTHORIZED).json({
       message: "Token not found",
